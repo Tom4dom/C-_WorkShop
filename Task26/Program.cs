@@ -16,7 +16,7 @@
 // int NumberOfDigits(int num)
 // {
 //     int quantity = 0;
-//     while (num != 0)
+//     while (num != 0) // Get to the bottom of why != is better than > in this case
 //     {
 //         num = num / 10;
 //         quantity = quantity + 1;
@@ -33,11 +33,11 @@ int InsertDigit(string text) //Метод пользовательского в�
     return result;
 }
 
-int CountDigit(int insertNum)
+int CountDigit(int insertNum) //Counter of digits in a number
 {
     insertNum = Math.Abs(insertNum);
     int temp = 0;
-    while (insertNum > 0)
+    while (insertNum > 0)  /////////////// Get to the bottom of why != is better than > and in this case!
     {
         insertNum = insertNum / 10;
         temp++;
