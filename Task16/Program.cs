@@ -15,20 +15,20 @@ bool Method(int arg0, int arg1)
 
 
 
-Console.WriteLine("Input first number: ");
-int num1 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Input first number: ");
+// int num1 = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Input second number: ");
-int num2 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Input second number: ");
+// int num2 = Convert.ToInt32(Console.ReadLine());
 
-if Method((num1), (num2))
-{
-    Console.WriteLine("OK");
-}
-else
-{
-    Console.WriteLine("Not OK");
-}
+// if Method((num1), (num2))
+// {
+//     Console.WriteLine("OK");
+// }
+// else
+// {
+//     Console.WriteLine("Not OK");
+// }
 
 
 
