@@ -41,24 +41,51 @@
 // 5 -> 120
 
 
-int Multiply(long num)
+// int Multiply(int num)
+// {
+//     int result = 1;
+//     for (int i = 1; i <= num; i++)
+//     {
+//         result = result * i;
+//     }
+//     return result;
+// }
+
+
+// int InsertDigit(string text) //Метод пользовательского ввода
+// {
+//     Console.Write(text);
+//     int result = Convert.ToInt32(Console.ReadLine());
+//     return result;
+// }
+
+// int num = InsertDigit("Enter a number: ");
+// int mult = Multiply(num);
+// System.Console.WriteLine($"{num} -> {mult}");
+
+
+
+
+
+int NumberFromUsr(string txt)
 {
-int result = 1;
-for (int i = 1; i <= num; i++)
-{
-result = result * i;
+    Console.Write(txt);
+    int numberFromUsr = Convert.ToInt32(Console.ReadLine());
+    return numberFromUsr;
 }
-return result;
+
+int Factorial(int number)
+{
+    number = Math.Abs(number);
+    int factorial = 1;
+    for (int i = 1; i <= number; i++)
+    {
+        factorial = factorial * i;
+    }
+    return factorial;
 }
 
 
-int InsertDigit(string text) //Метод пользовательского ввода
-{
-Console.Write(text);
-int result = Convert.ToInt32(Console.ReadLine());
-return result;
-}
-
-int num = InsertDigit("Enter a number: ");
-int mult = Multiply(num);
-System.Console.WriteLine($"{num} -> {mult}");
+int num = NumberFromUsr("Enter your number: ");
+int fact = Factorial(num);
+Console.WriteLine($"Factorial of {num} equals {fact}");

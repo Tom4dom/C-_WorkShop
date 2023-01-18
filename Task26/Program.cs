@@ -35,9 +35,9 @@ int InsertDigit(string text) //Метод пользовательского в�
 
 int CountDigit(int insertNum) //Counter of digits in a number
 {
-    insertNum = Math.Abs(insertNum);
+    //insertNum = Math.Abs(insertNum);
     int temp = 0;
-    while (insertNum > 0)  /////////////// Get to the bottom of why != is better than > and in this case!
+    while (insertNum != 0)  /////////////// Get to the bottom of why != is better than > and in this case! // I KNOW IT NOW)))
     {
         insertNum = insertNum / 10;
         temp++;

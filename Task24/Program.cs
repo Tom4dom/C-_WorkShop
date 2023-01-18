@@ -16,7 +16,7 @@
 // int sum = num;
 
 
-// while (num >= 1)
+// while (num > 1)
 // {
 //     num = num - 1;
 //     sum = sum + num;
