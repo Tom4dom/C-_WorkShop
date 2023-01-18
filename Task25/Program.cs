@@ -13,7 +13,7 @@ int NumberFromUsr(string txt)
     return numberFromUsr;
 }
 
-void PowerOfNumber(int parameterA, int parameterB)
+int PowerOfNumber(int parameterA, int parameterB)
 {
     parameterB = Math.Abs(parameterB);
     int powerOfNumber = parameterA;
@@ -21,9 +21,13 @@ void PowerOfNumber(int parameterA, int parameterB)
     {
         powerOfNumber = powerOfNumber * parameterA;
     }
-    Console.WriteLine($"{parameterA}, {parameterB} -> {powerOfNumber}");
+    return powerOfNumber;
+
 }
 
 int numA = NumberFromUsr("Enter your number A: ");
 int numB = NumberFromUsr("Enter your number B: ");
-PowerOfNumber(numA, numB);
+
+int powerOfNumber = PowerOfNumber(numA, numB);
+
+Console.WriteLine($"{numA}, {numB} -> {powerOfNumber}");
