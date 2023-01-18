@@ -31,3 +31,5 @@ int numB = NumberFromUsr("Enter your number B: ");
 int powerOfNumber = PowerOfNumber(numA, numB);
 
 Console.WriteLine($"{numA}, {numB} -> {powerOfNumber}");
+
+
