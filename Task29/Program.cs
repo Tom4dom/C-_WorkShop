@@ -28,6 +28,6 @@ void PrintArray(int[] arrayAsParameter)
 }
 
 
-int[] arr = CreateArray(16);
+int[] arr = CreateArray(8);
 PrintArray(arr);
 
