@@ -7,60 +7,56 @@
 // положительных чисел равна 29, 
 // сумма отрицательных равна -20.
 
-
-int[] ArrayCreator(string txt)
+int[] CreateArrayRndInt(int size, int min, int max)
 {
-    Console.Write(txt);
-    int num = Convert.ToInt32(Console.ReadLine());
-    int[] nameOfArray = new int[num];
-    Random randomNumberForMyArray = new Random();
-    for (int i = 0; i < nameOfArray.Length; i++)
-    {
-        nameOfArray[i] = randomNumberForMyArray.Next(-9, 10);
-    }
-    return nameOfArray;
+int[] array = new int[size];
+Random rnd = new Random();
+for (int i = 0; i < array.Length; i++)
+{
+array[i] = rnd.Next(min, max + 1);
+}
+return array;
 }
 
-void ArrayPrinter(int[] collection)
+void PrintArray(int[] array)
 {
-    Console.Write("Elements of the array look like this:");
-    Console.Write(" [ ");
-    for (int i = 0; i < collection.Length; i++)
-    {
-        Console.Write($"{collection[i]}, ");
-    }
-    Console.Write("]");
+Console.Write("[");
+for (int i = 0; i < array.Length; i++)
+{
+if(i < array.Length - 1) Console.Write (array[i] + ",");
+else Console.Write (array[i]);
+}
+Console.WriteLine("]");
 }
 
-int[] SumOfArrayElements(int[] collection)
+int GetSumPositiveElem(int[] array)
 {
-    int[] posNeg = new int[2];
-    for (int i = 0; i < collection.Length; i++)
-    {
-        if (collection[i] > 0)
-        {
-            posNeg[0] = posNeg[0] + collection[i];
-        }
-        else
-        {
-            posNeg[1] = posNeg[1] + collection[i];
-        }
-    }
-    return posNeg;
-
-
+int sum = 0;
+for (int i = 0; i < array.Length; i++)
+{
+if(array[i] > 0) sum += array[i];
+}
+return sum;
 }
 
+int GetSumNegativeElem(int[] array)
+{
+int sum = 0;
+for (int i = 0; i < array.Length; i++)
+{
+if(array[i] < 0) sum += array[i];
+}
+return sum;
+}
 
-int[] array = ArrayCreator("Enter array length: ");
-Console.WriteLine();
-ArrayPrinter(array);
-Console.WriteLine();
-int[] posNegSum = SumOfArrayElements(array);
-Console.WriteLine();
-Console.WriteLine($"Sum of POSITIVE elements of your array equals:  {posNegSum[0]}");
-Console.WriteLine();
-Console.WriteLine($"Sum of NEGATIVE elements of your array equals: {posNegSum[1]}");
+int[] arr = CreateArrayRndInt(12, -9, 9);
+PrintArray(arr);
+
+int sumPositive = GetSumPositiveElem(arr);
+int sumNegative = GetSumNegativeElem(arr);
+
+Console.WriteLine($"Сумма положительных элементов = {sumPositive}");
+Console.WriteLine($"Сумма отрицательных элементов = {sumNegative}");
 
 
 
@@ -68,6 +64,85 @@ Console.WriteLine($"Sum of NEGATIVE elements of your array equals: {posNegSum[1]
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//=========================================================== My Vision ========================================
+
+
+// int[] ArrayCreator(string txt)
+// {
+//     Console.Write(txt);
+//     int num = Convert.ToInt32(Console.ReadLine());
+//     int[] nameOfArray = new int[num];
+//     Random rnd = new Random();
+//     for (int i = 0; i < nameOfArray.Length; i++)
+//     {
+//         nameOfArray[i] = rnd.Next(-9, 10);
+//     }
+//     return nameOfArray;
+// }
+
+// void ArrayPrinter(int[] collection)
+// {
+//     Console.Write("Elements of the array look like this:");
+//     Console.Write(" [ ");
+//     for (int i = 0; i < collection.Length; i++)
+//     {
+//         Console.Write($"{collection[i]}, ");
+//     }
+//     Console.Write("]");
+// }
+
+// int[] SumOfArrayElements(int[] collection)
+// {
+//     int[] posNeg = new int[2];
+//     for (int i = 0; i < collection.Length; i++)
+//     {
+//         if (collection[i] > 0)
+//         {
+//             posNeg[0] = posNeg[0] + collection[i];
+//         }
+//         else
+//         {
+//             posNeg[1] = posNeg[1] + collection[i];
+//         }
+//     }
+//     return posNeg;
+
+
+// }
+
+
+// int[] array = ArrayCreator("Enter array length: ");
+// Console.WriteLine();
+// ArrayPrinter(array);
+// Console.WriteLine();
+// int[] posNegSum = SumOfArrayElements(array);
+// Console.WriteLine();
+// Console.WriteLine($"Sum of POSITIVE elements of your array equals:  {posNegSum[0]}");
+// Console.WriteLine();
+// Console.WriteLine($"Sum of NEGATIVE elements of your array equals: {posNegSum[1]}");
+// Console.Write(typeof(string).Assembly.ImageRuntimeVersion);
+
+
+
+
+
+
+//=======================================================================================================================
 
 
 
