@@ -3,6 +3,50 @@
 // нулями и единицами в случайном порядке.
 // [1,0,1,1,0,1,0,0]
 
+void ArrayFiller(int[] collection)
+{
+    for (int i = 0; i < collection.Length; i++)
+    {
+        Console.Write($"{collection[i]} ");
+    }
+    Console.WriteLine();
+
+    for (int i = 0; i < collection.Length; i++)
+    {
+        collection[i] = i;
+        Console.Write($"{collection[i]} ");
+    }
+    Console.WriteLine();
+
+    for (int i = 0; i < collection.Length; i++)
+    {
+        collection[i] = new Random().Next(0, 2);
+    }
+}
+
+void PrintArray(int[] collection)
+{
+    for (int i = 0; i < collection.Length; i++)
+    {
+        Console.Write($"{collection[i]} ");
+    }
+}
+
+
+int[] collection = new int[10];
+
+ArrayFiller(collection);
+PrintArray(collection);
+
+
+
+
+
+
+
+
+
+
 
 // void FillArray(int[] collection)
 // {
@@ -105,12 +149,13 @@ PrintArray(arrayname);
 // {
 //     int[] nameOfArray = new int[amountOfElements];
 //     Random randomNumberForMyArray = new Random();
+
 //     for (int i = 0; i < nameOfArray.Length; i++)
 //     {
 //         nameOfArray[i] = randomNumberForMyArray.Next(0, 2);
 //     }
-//     return nameOfArray;
 
+//     return nameOfArray;
 // }
 
 // void PrintArray(int[] arrayNameAsParameter)

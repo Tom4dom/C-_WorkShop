@@ -196,3 +196,94 @@
 //     count = count + 1;
 // }
 // Console.SetCursorPosition(50, 36);
+
+
+// // double a = 4.52;
+
+// // int b = (int)a;
+
+// // double c = b;
+
+// // short variableOne = 4255;
+// // byte variableTwo = (byte)variableOne;
+
+
+
+// // Console.WriteLine(variableTwo);
+
+
+// short x = 150;
+// byte y = (byte)(x + x);
+
+// // Console.WriteLine(y);
+
+
+// using System;
+
+// public class MainClass
+// {
+//     public static void Main()
+//     {
+//         string text = Console.ReadLine();
+
+//         string newLine = "Вы ввели: " +  text;
+
+//         Console.WriteLine(newLine); 
+        
+//     }
+// }
+
+
+
+// public class MainClass
+// {
+//     public static void Main()
+//     {
+//         Console.WriteLine("Введите два целых числа через пробел"); 
+//         string line = Console.ReadLine();
+//         string[] splitString = line.Split(' ');
+
+//         int x1 = int.Parse(splitString[0]);
+//         int x2 = int.Parse(splitString[1]);
+
+//         int sum = x1 + x2; // Запишите тут Ваш код для вычисления суммы значений x1 и x2
+//         int difference = x1 - x2; // Запишите тут Ваш код для вычисления разности значений x1 и x2
+//         int multiply =  x1 * x2; // Запишите тут Ваш код для вычисления произведения значений x1 и x2
+//         Console.WriteLine($"{sum} {difference} {multiply}"); 
+//     }
+
+
+
+//     using System;
+
+// public class MainClass
+// {
+//     public static void Main()
+//     {        
+//         Console.WriteLine("Input distance in meters: ");
+//         int n = Convert.ToInt32(Console.ReadLine()); // преобразуем введенную строку в число 
+//                                                      // и присваиваем его значение переменной
+
+//         int distance = n / n; //Запишите тут Ваш код для вычислений
+
+//         Console.WriteLine(distance); 
+//     }
+// }
+
+
+
+
+int UsrInputNums(string usrtxt)
+{
+    Console.Write(usrtxt);
+    string line = Console.ReadLine();
+    string[] splitString = line.Split(' ');
+    int num = int.Parse(splitString[0]);
+    return num;
+}
+
+
+int numA = UsrInputNums("Enter two integers A: ");
+int numB = UsrInputNums("Enter two integers B: ");
+Console.WriteLine(numA);
+Console.WriteLine(numB);
