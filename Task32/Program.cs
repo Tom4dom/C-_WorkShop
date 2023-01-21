@@ -21,7 +21,7 @@ void ArrayPrinter(int[] arr)
 Console.Write("[");
 for (int i = 0; i < arr.Length; i++)
 {
-if(i < arr.Length - 1) Console.Write (arr[i] + ",");
+if(i < arr.Length - 1) Console.Write (arr[i] + ", ");
 else Console.Write (arr[i]);
 }
 Console.WriteLine("]");
@@ -31,14 +31,16 @@ void ArrayElementConverter(int[] collection)
 {
     for (int i = 0; i < collection.Length; i++)
     {
-        if (collection[i] > 0)
-        {
-            collection[i] = collection[i] - collection[i] * 2;
-        }
-        else
-        {
-            collection[i] = collection[i] - collection[i] - collection[i];
-        }
+        //collection[i] = -1 * collection[i];
+        collection[i] = -collection[i];
+        // if (collection[i] > 0)
+        // {
+        //     collection[i] = collection[i] - collection[i] * 2;
+        // }
+        // else
+        // {
+        //     collection[i] = collection[i] - collection[i] - collection[i];
+        // }
     }
 }
 
@@ -46,6 +48,15 @@ int[] array = ArrayCreator(12, -9, 9);
 ArrayPrinter(array);
 ArrayElementConverter(array);
 ArrayPrinter(array);
+
+
+
+
+
+
+
+
+
 
 
 
