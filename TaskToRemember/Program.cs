@@ -229,7 +229,7 @@
 //         string newLine = "Вы ввели: " +  text;
 
 //         Console.WriteLine(newLine); 
-        
+
 //     }
 // }
 
@@ -273,17 +273,359 @@
 
 
 
-int UsrInputNums(string usrtxt)
+// int UsrInputNums(string usrtxt)
+// {
+//     Console.Write(usrtxt);
+//     string line = Console.ReadLine();
+//     string[] splitString = line.Split(' ');
+//     int num = int.Parse(splitString[0]);
+//     return num;
+// }
+
+
+// int numA = UsrInputNums("Enter two integers A: ");
+// int numB = UsrInputNums("Enter two integers B: ");
+// Console.WriteLine(numA);
+// Console.WriteLine(numB);
+
+
+
+
+
+
+
+
+
+
+
+
+//=======================================================================================================================
+
+
+// Наталья Кузовлева, [23.01.2023 20:38]
+// Задача 46. Задайте двумерный массив размером m×n,
+// заполненный случайными целыми числами.
+// m = 3, n = 4.
+// 1 4 8 19
+// 5 -2 33 -2
+// 77 3 8 1
+
+// Наталья Кузовлева, [23.01.2023 20:39]
+// int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
+// {
+//     int[,] matrix = new int[rows, columns]; // 0, 1
+//     Random rnd = new Random();
+
+//     for (int i = 0; i < matrix.GetLength(0); i++) // 2
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++) // 
+//         {
+//             matrix[i, j] = rnd.Next(min, max + 1); // 2 - 3   100, 1000   
+//         }
+//     }
+//     return matrix;
+// }
+
+
+// void PrintMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         Console.Write("[");
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j], 5},");
+//             else Console.Write($"{matrix[i, j], 5}  ");
+//         }
+//         Console.WriteLine("]");
+//     }
+// }
+
+// int[,] array2D = CreateMatrixRndInt(3, 4, -100, 100);
+// PrintMatrix(array2D);
+
+// Наталья Кузовлева, [23.01.2023 20:41]
+// // Задача 48: Задайте двумерный массив размера m на n,
+// // каждый элемент в массиве находится по формуле: Amn = m+n.
+// // Выведите полученный массив на экран.
+// // m = 3, n = 4.
+// // 0 1 2 3
+// // 1 2 3 4
+// // 2 3 4 5
+
+// int[,] arr1 = CreatMatrixNM(3, 4, 1, 50);
+// PrintMatrix(arr1);
+
+
+// // Создание рандомного двумерного массива int
+// int[,] CreatMatrixNM(int rows, int columns, int min, int max)
+// {
+//     int[,] matrix = new int[rows, columns];
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             matrix[i, j] = i + j;
+//         }
+//     }
+//     return matrix;
+// }
+
+// // Печать массива int
+// void PrintMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         Console.Write("[");
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             if (j < matrix.GetLength(1) - 1) Console.Write(matrix[i, j] + ",");
+//             else Console.Write(matrix[i, j]);
+//         }
+//         Console.WriteLine("]");
+//     }
+// }
+
+// Наталья Кузовлева, [23.01.2023 20:41]
+// Задача 49: Задайте двумерный массив. Найдите элементы, у
+// которых оба индекса чётные, и замените эти элементы на их
+// квадраты.
+// Например, изначально массив
+// выглядел вот так:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+
+// Наталья Кузовлева, [23.01.2023 20:42]
+// void SquareMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i+=2)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j+=2)
+//         {
+//             matrix[i,j]*=matrix[i,j];
+//         }
+//     }
+// }
+
+// int[,] array2D = CreateMatrixRndInt(3, 4, -100, 100);
+// PrintMatrix(array2D);
+// SquareMatrix(array2D);
+// Console.WriteLine();
+// PrintMatrix(array2D);
+
+// Наталья Кузовлева, [23.01.2023 20:43]
+// // Задача 51: Задайте двумерный массив. Найдите сумму
+// // элементов, находящихся на главной диагонали (с индексами
+// // (0,0); (1;1) и т.д.
+// // Например, задан массив:
+// // 1 4 7 2
+// // 5 9 2 3
+// // 8 4 2 4
+// // Сумма элементов главной диагонали: 1+9+2 = 12
+
+// Наталья Кузовлева, [23.01.2023 20:44]
+// // Суммирование элементов на диагонали Вариант 1
+// int MatrixTrace(int[,] matrix)
+// {
+//     int sum = 0;
+//     int k = 0;
+//     if (matrix.GetLength(0) < matrix.GetLength(1)) k = matrix.GetLength(0);
+//     else k = matrix.GetLength(1);
+//     for (int i = 0; i < k; i++)
+//     {
+//         sum += matrix[i, i];
+//     }
+//     return sum;
+// }
+
+// Наталья Кузовлева, [23.01.2023 20:44]
+// // Вариант 2
+// int SummMatrix(int[,] matrix)
+// {
+//     int summMatr = 0;
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             if (i == j) summMatr += matrix[i, j];
+//         }
+//     }
+//     return summMatr;
+// }
+
+// int[,] arr1 = CreatMatrixNM(5, 4, 1, 10);
+// int summ = SummMatrix(arr1);
+// PrintMatrix(arr1);
+// System.Console.WriteLine($"Сумма элементов главной диагонали: {summ}");
+
+//=======================================================================================================================
+
+
+
+
+// string[,] table = new string[2, 5];
+
+// table[0,1] = "word01";
+// table[1,2] = "word12";
+// table[1,3] = "word13";
+// table[0,2] = "word02";
+
+// table[1,4] = "word14";
+// table[1,1] = "word11";
+
+// for (int rows = 0; rows < 2; rows++)
+// {
+//     for (int columns = 0; columns < 5 ; columns++)
+//     {
+//         Console.WriteLine($"=={table[rows, columns]}== ");
+//     }
+// }
+
+
+//=========================================================================================
+
+
+// void PrintMultiDemensionalArray(int[,] mat)
+// {
+//     for (int rows = 0; rows < mat.GetLength(0); rows++)
+//     {
+//         for (int columns = 0; columns < mat.GetLength(1); columns++)
+//         {
+//             Console.Write($"--{mat[rows, columns]}--");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void FillMultiDemensionalArray(int[,] arr)
+// {
+//     Random rnd = new Random();
+//     for (int rows = 0; rows < arr.GetLength(0); rows++)
+//     {
+//         for (int columns = 0; columns < arr.GetLength(1); columns++)
+//         {
+//             arr[rows, columns] = rnd.Next(1, 10);
+//         }
+//     }
+// }
+
+// int[,] matrix = new int[4, 6];
+
+// PrintMultiDemensionalArray(matrix);
+// Console.WriteLine();
+// FillMultiDemensionalArray(matrix);
+// PrintMultiDemensionalArray(matrix);
+
+
+//=======================================================================================
+
+
+// int[,] picture = new int[,]
+// {
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+// };
+
+
+// void PrintMultiDemensionalArrayAsImage(int[,] pic)
+// {
+//     for (int rows = 0; rows < pic.GetLength(0); rows++)
+//     {
+//         for (int columns = 0; columns < pic.GetLength(1); columns++)
+//         {
+//             if (pic[rows, columns] == 0)
+//             {
+//                 Console.Write(" ");
+//             }
+//             else
+//             {
+//                 Console.Write($"*");
+//             }
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+// void PictureFiller(int row, int column)
+// {
+//     if (picture[row, column] == 0)
+//     {
+//         picture[row, column] = 1;
+//         PictureFiller(row - 1, column);
+//         PictureFiller(row, column - 1);
+//         PictureFiller(row + 1, column);
+//         PictureFiller(row, column + 1);
+//     }
+// }
+
+
+
+
+// PrintMultiDemensionalArrayAsImage(picture);
+// PictureFiller(3,9);
+// PrintMultiDemensionalArrayAsImage(picture);
+
+
+
+
+
+
+// int Factorial(int n)
+// {
+//     //0! = 1
+//     //1! = 1
+//     //2! = 2
+//     //3! = 6
+//     //4! = 24
+//     //5! = 120
+//     //6! = 720
+//     if (n == 0) return 1;
+//     else return n * Factorial(n - 1);
+// }
+
+
+// for (int i = 0; i < 40; i++)
+// {
+//     Console.WriteLine($"{i}! = {Factorial(i)}");
+// }
+
+
+
+
+
+
+
+int Fiba(int n)
 {
-    Console.Write(usrtxt);
-    string line = Console.ReadLine();
-    string[] splitString = line.Split(' ');
-    int num = int.Parse(splitString[0]);
-    return num;
+    if (n == 1 || n == 2) return 1;
+    else return Fiba(n-1) + Fiba(n-2);
 }
 
+for (int i = 1; i < 10; i++)
+{
+    Console.WriteLine(Fiba(i));
+}
 
-int numA = UsrInputNums("Enter two integers A: ");
-int numB = UsrInputNums("Enter two integers B: ");
-Console.WriteLine(numA);
-Console.WriteLine(numB);
