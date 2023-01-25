@@ -1,0 +1,65 @@
+﻿// Задача 40: 
+// Напишите программу, которая принимает на вход три
+// числа и проверяет, может ли существовать треугольник с сторонами
+// такой длины.
+
+// Подсказка:
+// Теорема о неравенстве треугольника: каждая сторона треугольника
+// меньше суммы двух других сторон.
+
+
+
+
+
+int UsrInputNums(string usrtxt)
+{
+    Console.Write(usrtxt);
+    string line = Console.ReadLine();
+    string[] splitString = line.Split(' ');
+    int num = int.Parse(splitString[0]);
+    return num;
+}
+
+
+void MightOrMightNotExist(int a, int b, int c)
+{
+    if (a < b+c && b < a+c && c < a+b)
+    {
+        Console.WriteLine ("Yes");
+    }
+    else
+    {
+        Console.WriteLine("No");
+    }
+}
+
+
+
+int numA = UsrInputNums("Enter integer A: ");
+int numB = UsrInputNums("Enter integer B: ");
+int numC = UsrInputNums("Enter integer C: ");
+Console.WriteLine(numA);
+Console.WriteLine(numB);
+Console.WriteLine(numC);
+
+MightOrMightNotExist(numA, numB, numC);
+
+
+
+
+
+// Задача 40: Напишите программу, которая принимает на вход три
+// числа и проверяет, может ли существовать треугольник с сторонами
+// такой длины.
+// Теорема о неравенстве треугольника: каждая сторона треугольника
+// меньше суммы двух других сторон.
+
+// System.Console.WriteLine("Выведите 3 числа: ");
+// int num1 = Convert.ToInt32(Console.ReadLine());
+// int num2 = Convert.ToInt32(Console.ReadLine());
+// int num3 = Convert.ToInt32(Console.ReadLine());
+
+// if (num1 < num2 + num3 && num2 < num1 + num3 && num3 < num1 + num2) Console.WriteLine("Да");
+// else System.Console.WriteLine("Нет");
+
+// 
