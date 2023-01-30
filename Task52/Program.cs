@@ -64,7 +64,6 @@ void ArithmeticMeanOfEashColumn(int[,] arr)
         }
         sumToAvg = Math.Round(sumToAvg / rows, 2);
         Console.Write($" {sumToAvg, 6} ");
-
     }
 }
 
