@@ -32,23 +32,14 @@ void ArrayPrinter(int[,] matrix)
 
 void RowChanger(int[,] arr)
 {
-    int[] temp = new int[arr.GetLength(1)];
-    for (int i = 0; i < temp.Length; i++)
+    int temp = 0;
+    for (int i = 0; i < arr.GetLength(1); i++)
     {
-        temp[i] = arr[0, i];
-    }
-
-    for (int i = 0; i < temp.Length; i++)
-    {
+        temp = arr[0, i];
         arr[0, i] = arr[arr.GetLength(0)-1, i];
-    }
-
-   for (int i = 0; i < temp.Length; i++)
-    {
-        arr[arr.GetLength(0)-1, i] = temp[i];
+        arr[arr.GetLength(0)-1, i] = temp;
     }
 }
-
 
 
 int rows = 4;
